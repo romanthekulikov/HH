@@ -53,6 +53,9 @@ dependencies {
     implementation(libs.dagger)
     kapt(libs.dagger.compiler)
 
+    // Reflection
+    implementation(libs.kotlin.reflect)
+
     implementation(project(":data"))
     implementation(project(":domain"))
 }
