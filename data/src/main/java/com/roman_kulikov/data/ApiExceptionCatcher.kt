@@ -8,6 +8,7 @@ import java.net.SocketTimeoutException
 import java.net.UnknownHostException
 import javax.inject.Inject
 
+private const val ERROR_NO_INTERNET = "No Internet"
 private const val ERROR_UNEXPECTED = "Unexpected error:"
 private const val ERROR_SERVER_SHUTDOWN = "Server shutdown"
 private const val ERROR_UNIDENTIFIED = "Unidentified error"
@@ -18,7 +19,7 @@ class ApiExceptionCatcher @Inject constructor() : ExceptionCatcher {
         return try {
             job()
         } catch (e: UnknownHostException) {
-            Result.NoNetwork()
+            Result.Failure(cause = ERROR_NO_INTERNET)
         } catch (e: HttpException) {
             Result.Failure(cause = "$ERROR_UNEXPECTED ${e.message()}")
         } catch (e: SocketTimeoutException) {
@@ -32,7 +33,7 @@ class ApiExceptionCatcher @Inject constructor() : ExceptionCatcher {
         return try {
             job()
         } catch (e: UnknownHostException) {
-            Result.NoNetwork()
+            Result.Failure(cause = ERROR_NO_INTERNET)
         } catch (e: HttpException) {
             Result.Failure(cause = "$ERROR_UNEXPECTED ${e.message()}")
         } catch (e: SocketTimeoutException) {

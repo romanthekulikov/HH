@@ -1,11 +1,12 @@
-package com.roman_kulikov.hh.bottom_navigation_view
+package com.roman_kulikov.hh.ui.main.bottom_navigation_view
 
 import android.content.Context
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.view.View
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
-import com.roman_kulikov.hh.R
 import com.roman_kulikov.hh.databinding.ViewBottomNavigationBinding
 
 class HHBottomNavigationView @JvmOverloads constructor(
@@ -16,10 +17,11 @@ class HHBottomNavigationView @JvmOverloads constructor(
     private lateinit var listener: OnItemClickListener
 
     private val binding: ViewBottomNavigationBinding by lazy { ViewBottomNavigationBinding.inflate(LayoutInflater.from(context), this, true) }
-
+    private var currentItem = Item(binding.imageSearch, binding.titleSearch)
 
     init {
-        inflate(context, R.layout.view_bottom_navigation, this)
+        currentItem.iconView.isSelected = true
+        currentItem.textView.isSelected = true
         initListeners()
     }
 
@@ -29,34 +31,29 @@ class HHBottomNavigationView @JvmOverloads constructor(
 
     private fun initListeners() {
         binding.layoutSearch.setOnClickListener {
-            selectItem(BottomNavigationItem.SEARCH, binding.layoutSearch)
+            selectItem(BottomNavigationItem.SEARCH, Item(binding.imageSearch, binding.titleSearch))
         }
         binding.layoutFavorite.setOnClickListener {
-            selectItem(BottomNavigationItem.FAVORITES, binding.layoutFavorite)
+            selectItem(BottomNavigationItem.FAVORITES, Item(binding.imageFavorite, binding.titleFavorite))
         }
         binding.layoutResponse.setOnClickListener {
-            selectItem(BottomNavigationItem.RESPONSE, binding.layoutResponse)
+            selectItem(BottomNavigationItem.RESPONSE, Item(binding.imageResponse, binding.titleResponse))
         }
         binding.layoutMessages.setOnClickListener {
-            selectItem(BottomNavigationItem.MESSAGES, binding.layoutMessages)
+            selectItem(BottomNavigationItem.MESSAGES, Item(binding.imageMessages, binding.titleMessages))
         }
         binding.layoutProfile.setOnClickListener {
-            selectItem(BottomNavigationItem.PROFILE, binding.layoutProfile)
+            selectItem(BottomNavigationItem.PROFILE, Item(binding.imageProfile, binding.titleProfile))
         }
     }
 
-    private fun selectItem(item: BottomNavigationItem, itemView: View) {
+    private fun selectItem(item: BottomNavigationItem, viewItem: Item) {
         listener.onSelectItem(item)
-        resetAllItems()
-        itemView.isSelected = true
-    }
-
-    private fun resetAllItems() {
-        binding.layoutSearch.isSelected = false
-        binding.layoutFavorite.isSelected = false
-        binding.layoutResponse.isSelected = false
-        binding.layoutMessages.isSelected = false
-        binding.layoutProfile.isSelected = false
+        currentItem.iconView.isSelected = false
+        currentItem.textView.isSelected = false
+        currentItem = viewItem
+        currentItem.iconView.isSelected = true
+        currentItem.textView.isSelected = true
     }
 
     fun setFavoriteVacancyNumber(number: Int) {
@@ -68,6 +65,8 @@ class HHBottomNavigationView @JvmOverloads constructor(
         }
     }
 
+
+    private data class Item(val iconView: ImageView, val textView: TextView)
 
     interface OnItemClickListener {
         fun onSelectItem(item: BottomNavigationItem)

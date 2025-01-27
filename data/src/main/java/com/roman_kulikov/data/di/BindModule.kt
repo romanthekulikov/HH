@@ -1,7 +1,7 @@
 package com.roman_kulikov.data.di
 
-import com.roman_kulikov.data.VacanciesRepositoryImpl
-import com.roman_kulikov.domain.VacanciesRepository
+import com.roman_kulikov.data.RepositoryImpl
+import com.roman_kulikov.domain.Repository
 import dagger.Binds
 import dagger.Module
 import javax.inject.Singleton
@@ -11,5 +11,5 @@ interface BindModule {
 
     @Binds
     @Singleton
-    fun bindVacancyRepository(vacanciesRepositoryImpl: VacanciesRepositoryImpl): VacanciesRepository
+    fun bindVacancyRepository(vacanciesRepositoryImpl: RepositoryImpl): Repository
 }
