@@ -6,10 +6,10 @@ import androidx.activity.viewModels
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import com.roman_kulikov.hh.R
+import com.roman_kulikov.hh.databinding.ActivityMainBinding
 import com.roman_kulikov.hh.ui.base.BaseActivity
 import com.roman_kulikov.hh.ui.main.bottom_navigation_view.BottomNavigationItem
 import com.roman_kulikov.hh.ui.main.bottom_navigation_view.HHBottomNavigationView
-import com.roman_kulikov.hh.databinding.ActivityMainBinding
 import com.roman_kulikov.hh.ui.main.fragments.FavoriteFragment
 import com.roman_kulikov.hh.ui.main.fragments.MessagesFragment
 import com.roman_kulikov.hh.ui.main.fragments.ProfileFragment
@@ -19,6 +19,7 @@ import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 
 class MainActivity : BaseActivity<MainState>(), HHBottomNavigationView.OnItemClickListener {
+
     private lateinit var binding: ActivityMainBinding
     override val viewModel: MainViewModel by viewModels()
 
@@ -64,6 +65,9 @@ class MainActivity : BaseActivity<MainState>(), HHBottomNavigationView.OnItemCli
 
             }
         }
+    }
+
+    private fun setupRecyclerView() {
     }
 
     private fun requestData() {

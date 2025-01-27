@@ -13,7 +13,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/image_ic_offer"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:src="@drawable/ic_star"
@@ -21,7 +21,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/title_offer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Вакансии рядом с вами"
@@ -29,9 +29,10 @@
             android:layout_marginTop="12dp"
             android:textColor="@color/white"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+            app:layout_constraintTop_toBottomOf="@+id/image_ic_offer" />
 
         <TextView
+            android:id="@+id/title_up"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Поднять"
@@ -39,7 +40,7 @@
             android:textSize="14dp"
             android:visibility="visible"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+            app:layout_constraintTop_toBottomOf="@+id/title_offer" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

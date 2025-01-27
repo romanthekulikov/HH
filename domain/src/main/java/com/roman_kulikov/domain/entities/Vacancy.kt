@@ -2,7 +2,7 @@ package com.roman_kulikov.domain.entities
 
 import java.time.LocalDate
 
-interface Vacancy {
+interface Vacancy : DisplayableItem {
     val id: String
     val lookingNumber: Int?
     val title: String

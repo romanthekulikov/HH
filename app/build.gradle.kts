@@ -56,6 +56,9 @@ dependencies {
     // Reflection
     implementation(libs.kotlin.reflect)
 
+    // AdapterDelegate
+    implementation(libs.com.hannesdorfmann.adapterdelegates4.kotlin.dsl.viewbinding)
+
     implementation(project(":data"))
     implementation(project(":domain"))
 }

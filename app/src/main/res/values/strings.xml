@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">HH</string>
+    <string name="stub_title_looking_number">Сейчас просматривает 7 человек</string>
+
+    <string name="text_vacancy_nominative">вакансия</string>
+    <string name="text_vacancy_genitive">вакансии</string>
+    <string name="text_vacancy_plural">вакансий</string>
+
+    <string name="text_people_nominative">человек</string>
+    <string name="text_people_genitive">человека</string>
+    <string name="text_people_plural">человек</string>
+
+
 </resources>
