@@ -27,7 +27,7 @@ data class ApiVacancy(
     override val publishedDate: LocalDate,
 
     @Json(name = "isFavorite")
-    override val isFavorite: Boolean,
+    override var isFavorite: Boolean,
 
     @Json(name = "salary")
     override val salary: ApiSalary,

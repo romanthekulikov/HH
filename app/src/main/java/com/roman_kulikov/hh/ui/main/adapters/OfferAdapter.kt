@@ -17,7 +17,7 @@ class OfferAdapter @Inject constructor() : RecyclerView.Adapter<OfferAdapter.Off
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): OfferViewHolder {
-        return OfferViewHolder(ItemOfferBinding.inflate(LayoutInflater.from(parent.context)))
+        return OfferViewHolder(ItemOfferBinding.inflate(LayoutInflater.from(parent.context), parent, false))
     }
 
     override fun getItemCount(): Int = offersList.size
@@ -40,6 +40,7 @@ class OfferAdapter @Inject constructor() : RecyclerView.Adapter<OfferAdapter.Off
                 if (item.button == null) {
                     titleUp.visibility = View.GONE
                 } else {
+                    titleUp.visibility = View.VISIBLE
                     titleUp.text = item.button!!.text
                 }
             }

@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:paddingStart="20dp"
+    android:paddingEnd="20dp">
+
     <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_more"
         android:background="@drawable/shape_button"
         android:layout_width="match_parent"
-        android:text="Еще 25 вакансий"
-        android:textSize="18sp"
+        android:text="@string/stub_title_more_button"
+        android:textSize="16sp"
         android:textColor="@color/white"
         android:layout_height="58dp"/>
+
 </LinearLayout>

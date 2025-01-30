@@ -3,8 +3,8 @@ package com.roman_kulikov.hh.di
 import com.roman_kulikov.data.di.ApiModule
 import com.roman_kulikov.data.di.BindModule
 import com.roman_kulikov.hh.ui.main.MainViewModel
-import com.roman_kulikov.hh.ui.main.adapters.OffersListAdapterDelegate
-import com.roman_kulikov.hh.ui.main.adapters.VacancyAdapterDelegate
+import com.roman_kulikov.hh.ui.main.adapters.delegators.OffersListAdapterDelegate
+import com.roman_kulikov.hh.ui.main.adapters.delegators.VacancyAdapterDelegate
 import com.roman_kulikov.hh.ui.main.fragments.SearchFragment
 import dagger.Component
 import javax.inject.Singleton

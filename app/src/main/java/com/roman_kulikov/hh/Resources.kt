@@ -2,10 +2,16 @@ package com.roman_kulikov.hh
 
 import com.roman_kulikov.domain.use_cases.Declension
 
-val peopleResDeclensionMap = mapOf(
+val peopleDeclensionMap = mapOf(
     Declension.NOMINATIVE to "человек",
     Declension.GENITIVE to "человека",
     Declension.PLURAL to "человек"
+)
+
+val vacancyDeclensionMap = mapOf(
+    Declension.NOMINATIVE to "вакансия",
+    Declension.GENITIVE to "вакансия",
+    Declension.PLURAL to "вакансий"
 )
 
 val offerIconIdToResMap = mapOf(

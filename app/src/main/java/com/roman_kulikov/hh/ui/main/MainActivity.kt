@@ -8,8 +8,8 @@ import androidx.lifecycle.lifecycleScope
 import com.roman_kulikov.hh.R
 import com.roman_kulikov.hh.databinding.ActivityMainBinding
 import com.roman_kulikov.hh.ui.base.BaseActivity
-import com.roman_kulikov.hh.ui.main.bottom_navigation_view.BottomNavigationItem
-import com.roman_kulikov.hh.ui.main.bottom_navigation_view.HHBottomNavigationView
+import com.roman_kulikov.hh.ui.main.custom_view.BottomNavigationItem
+import com.roman_kulikov.hh.ui.main.custom_view.HHBottomNavigationView
 import com.roman_kulikov.hh.ui.main.fragments.FavoriteFragment
 import com.roman_kulikov.hh.ui.main.fragments.MessagesFragment
 import com.roman_kulikov.hh.ui.main.fragments.ProfileFragment
@@ -49,10 +49,6 @@ class MainActivity : BaseActivity<MainState>(), HHBottomNavigationView.OnItemCli
         itemToFragmentMap[BottomNavigationItem.SEARCH]?.let { replaceFragmentTo(it) }
     }
 
-    private fun parseData() {
-
-    }
-
     private fun observeState() {
         lifecycleScope.launch {
             viewModel.state.collectLatest { state ->
@@ -65,9 +61,6 @@ class MainActivity : BaseActivity<MainState>(), HHBottomNavigationView.OnItemCli
 
             }
         }
-    }
-
-    private fun setupRecyclerView() {
     }
 
     private fun requestData() {

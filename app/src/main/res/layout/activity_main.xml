@@ -17,7 +17,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.roman_kulikov.hh.ui.main.bottom_navigation_view.HHBottomNavigationView
+    <com.roman_kulikov.hh.ui.main.custom_view.HHBottomNavigationView
         android:id="@+id/HHBottomNavigationView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"

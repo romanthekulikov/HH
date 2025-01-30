@@ -9,6 +9,8 @@
     <string name="text_people_nominative">человек</string>
     <string name="text_people_genitive">человека</string>
     <string name="text_people_plural">человек</string>
+    <string name="title_vacancy">Вакансии для вас</string>
+    <string name="stub_title_more_button">Еще 25 вакансий</string>
 
 
 </resources>

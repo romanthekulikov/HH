@@ -1,4 +1,4 @@
-package com.roman_kulikov.hh.ui.main.bottom_navigation_view
+package com.roman_kulikov.hh.ui.main.custom_view
 
 enum class BottomNavigationItem() {
     SEARCH,

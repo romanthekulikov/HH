@@ -1,4 +1,4 @@
-package com.roman_kulikov.hh.ui.main.adapters
+package com.roman_kulikov.hh.ui.main.adapters.delegators
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -6,10 +6,12 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.hannesdorfmann.adapterdelegates4.AdapterDelegate
-import com.roman_kulikov.domain.entities.DisplayableItem
+import com.roman_kulikov.domain.DisplayableItem
 import com.roman_kulikov.domain.entities.Offer
 import com.roman_kulikov.hh.HHApp
 import com.roman_kulikov.hh.databinding.ItemOffersListBinding
+import com.roman_kulikov.hh.ui.main.adapters.OfferAdapter
+import com.roman_kulikov.hh.ui.main.adapters.models.OffersListItem
 import javax.inject.Inject
 
 class OffersListAdapterDelegate @Inject constructor() : AdapterDelegate<List<DisplayableItem>>() {
@@ -22,15 +24,14 @@ class OffersListAdapterDelegate @Inject constructor() : AdapterDelegate<List<Dis
     lateinit var offerAdapter: OfferAdapter
 
     override fun isForViewType(items: List<DisplayableItem>, position: Int): Boolean {
-        if (items[position] is List<*>) {
-            return (items[position] as List<*>).first() is Offer
-        }
-
-        return false
+        return items[position] is OffersListItem
     }
 
     override fun onCreateViewHolder(parent: ViewGroup): RecyclerView.ViewHolder {
-        return OffersListViewHolder(ItemOffersListBinding.inflate(LayoutInflater.from(parent.context)), parent.context)
+        return OffersListViewHolder(
+            ItemOffersListBinding.inflate(LayoutInflater.from(parent.context), parent, false),
+            parent.context
+        )
     }
 
     override fun onBindViewHolder(
@@ -40,8 +41,9 @@ class OffersListAdapterDelegate @Inject constructor() : AdapterDelegate<List<Dis
         payloads: MutableList<Any>
     ) {
         val viewHolder = holder as OffersListViewHolder
-        val item = (items[position] as List<*>).filterIsInstance<Offer>()
-        viewHolder.bind(item)
+        val item = items[position] as OffersListItem
+
+        viewHolder.bind(item.offersList)
     }
 
     inner class OffersListViewHolder(
