@@ -7,7 +7,7 @@ import com.hannesdorfmann.adapterdelegates4.AdapterDelegate
 import com.roman_kulikov.domain.DisplayableItem
 import com.roman_kulikov.domain.use_cases.DeclensionUseCase
 import com.roman_kulikov.hh.databinding.ItemMoreButtonBinding
-import com.roman_kulikov.hh.ui.main.adapters.models.MoreButtonItem
+import com.roman_kulikov.hh.ui.main.adapters.items.MoreButtonItem
 import com.roman_kulikov.hh.vacancyDeclensionMap
 import javax.inject.Inject
 
@@ -15,12 +15,15 @@ class MoreButtonAdapterDelegate @Inject constructor(
     val declensionUseCase: DeclensionUseCase
 ) : AdapterDelegate<List<DisplayableItem>>() {
 
+    lateinit var onMoreButtonClickListener: OnMoreButtonClickListener
+
     override fun isForViewType(items: List<DisplayableItem>, position: Int): Boolean {
         return items[position] is MoreButtonItem
     }
 
     override fun onCreateViewHolder(parent: ViewGroup): RecyclerView.ViewHolder {
-        return MoreButtonViewHolder(ItemMoreButtonBinding.inflate(LayoutInflater.from(parent.context), parent, false))
+        val binding = ItemMoreButtonBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return MoreButtonViewHolder(binding)
     }
 
     override fun onBindViewHolder(
@@ -40,12 +43,12 @@ class MoreButtonAdapterDelegate @Inject constructor(
             val title = "Еще ${item.vacancyNumber} ${vacancyDeclensionMap[declensionUseCase(item.vacancyNumber)]}"
             binding.buttonMore.text = title
             binding.buttonMore.setOnClickListener {
-                item.onClickListener.onClick()
+                onMoreButtonClickListener.onClick()
             }
         }
     }
 
-    interface OnClickListener {
+    interface OnMoreButtonClickListener {
         fun onClick()
     }
 }

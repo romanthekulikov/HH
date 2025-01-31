@@ -27,11 +27,11 @@
 
         <TextView
             android:id="@+id/title_search"
-            android:textSize="12sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Поиск"
-            android:textColor="@color/selector_color" />
+            android:textColor="@color/selector_color"
+            android:textSize="12sp" />
     </LinearLayout>
 
     <LinearLayout
@@ -47,30 +47,33 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <FrameLayout
-            android:layoutDirection="rtl"
             android:layout_width="40dp"
-            android:layout_height="35dp">
+            android:layout_height="35dp"
+            android:layoutDirection="rtl">
+
             <ImageView
                 android:id="@+id/image_favorite"
                 android:layout_width="22dp"
                 android:layout_height="30dp"
                 android:layout_gravity="center"
                 android:src="@drawable/selector_icon_favorite" />
+
             <RelativeLayout
                 android:id="@+id/layout_badge_favorite"
                 android:layout_width="16dp"
                 android:layout_height="16dp"
-                android:gravity="center"
-                android:visibility="gone"
                 android:layout_gravity="start"
-                android:background="@drawable/shape_red_circle">
+                android:background="@drawable/shape_red_circle"
+                android:gravity="center"
+                android:visibility="gone">
+
                 <TextView
                     android:id="@+id/title_favorite_number"
-                    android:textSize="11sp"
-                    android:textColor="@color/white"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="2"/>
+                    android:text="2"
+                    android:textColor="@color/white"
+                    android:textSize="11sp" />
             </RelativeLayout>
 
         </FrameLayout>
@@ -80,9 +83,9 @@
             android:id="@+id/title_favorite"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="12sp"
+            android:text="Избранные"
             android:textColor="@color/selector_color"
-            android:text="Избранные" />
+            android:textSize="12sp" />
     </LinearLayout>
 
     <LinearLayout
@@ -107,9 +110,9 @@
             android:id="@+id/title_response"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="12sp"
             android:text="Отклики"
-            android:textColor="@color/selector_color" />
+            android:textColor="@color/selector_color"
+            android:textSize="12sp" />
     </LinearLayout>
 
     <LinearLayout
@@ -134,9 +137,9 @@
             android:id="@+id/title_messages"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="12sp"
             android:text="Сообщения"
-            android:textColor="@color/selector_color" />
+            android:textColor="@color/selector_color"
+            android:textSize="12sp" />
     </LinearLayout>
 
     <LinearLayout
@@ -162,8 +165,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Профиль"
-            android:textSize="12sp"
-            android:textColor="@color/selector_color" />
+            android:textColor="@color/selector_color"
+            android:textSize="12sp" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

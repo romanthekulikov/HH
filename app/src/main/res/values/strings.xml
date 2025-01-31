@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">HH</string>
-    <string name="stub_title_looking_number">Сейчас просматривает 7 человек</string>
 
     <string name="text_vacancy_nominative">вакансия</string>
     <string name="text_vacancy_genitive">вакансии</string>
@@ -9,8 +8,46 @@
     <string name="text_people_nominative">человек</string>
     <string name="text_people_genitive">человека</string>
     <string name="text_people_plural">человек</string>
+
     <string name="title_vacancy">Вакансии для вас</string>
+    <string name="title_favorite">Избранное</string>
+    <string name="title_messages">Сообщения</string>
+    <string name="title_profile">Профиль</string>
+    <string name="title_responses">Отклики</string>
+    <string name="title_button_response">Откликнуться</string>
+    <string name="title_item_search">Поиск</string>
+
+    <string name="hint_input_query_limit_mode">Должность, ключевые слова</string>
+    <string name="hint_input_query_full_mode">Должность по подходящим вакансиям</string>
+
+    <string name="stub_title_looking_number">Сейчас просматривает 7 человек</string>
     <string name="stub_title_more_button">Еще 25 вакансий</string>
+    <string name="stub_favorite_page">Добавляйте вакансии в избранное, чтобы страница не пустовала</string>
+    <string name="stub_title_schedules">Полная занятость, полный день</string>
+    <string name="stub_title_experience_full">Требуемый опыт работы: от 1 до 3 лет</string>
+    <string name="stub_title_salary">20 000 до 50 000 ₽</string>
+    <string name="stub_title_vacancy_name">UI/UX Designer</string>
+    <string name="stub_title_applied_number">147 человек уже откликнлось</string>
+    <string name="stub_title_looking_number_card">2 человека сейчас смотрят</string>
+    <string name="stub_view_vacancy_card">Ой, что-то пошло не так. Попробуйте заново!</string>
+    <string name="stub_empty_page">Уупс, здесь пока ничего нет</string>
+    <string name="stub_title_offer">Вакансии рядом с вами</string>
+    <string name="stub_offer_up_button">Поднять</string>
+    <string name="stub_vacancy_number">145 вакансий</string>
+    <string name="stub_title_match">По соответствию</string>
+    <string name="stub_title_company_name">Мобирикс</string>
+    <string name="stub_title_experience">Опыт от 1 до 3 лет</string>
+    <string name="stub_title_publish_date">Опубликовано 16 февраля</string>
+    <string name="stub_title_town">Минск</string>
 
-
+    <string name="description_vacancy_card_back_arrow">Vacancy card back arrow</string>
+    <string name="description_favorite_check">Favorite check</string>
+    <string name="description_look_image">Look image</string>
+    <string name="description_image_user_icon">Image user icon</string>
+    <string name="description_offer_icon">Offer icon</string>
+    <string name="description_search_field_icon">Search field icon</string>
+    <string name="description_filter_icon">Filter icon</string>
+    <string name="description_match_image">Match image</string>
+    <string name="description_company_check_icon">Company check icon</string>
+    <string name="description_experience_icon">Experience icon</string>
 </resources>

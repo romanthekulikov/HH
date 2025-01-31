@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
@@ -8,15 +8,14 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="140dp"
         android:layout_height="130dp"
-        android:padding="12dp"
         android:background="@drawable/shape_data_items"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:padding="12dp">
 
         <ImageView
             android:id="@+id/image_ic_offer"
             android:layout_width="38dp"
             android:layout_height="38dp"
+            android:contentDescription="@string/description_offer_icon"
             android:src="@drawable/ic_star"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -25,10 +24,10 @@
             android:id="@+id/title_offer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Вакансии рядом с вами"
-            android:textSize="14sp"
             android:layout_marginTop="12dp"
+            android:text="@string/stub_title_offer"
             android:textColor="@color/white"
+            android:textSize="14sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/image_ic_offer" />
 
@@ -36,12 +35,12 @@
             android:id="@+id/title_up"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Поднять"
+            android:text="@string/stub_offer_up_button"
             android:textColor="@color/green"
-            android:textSize="14dp"
+            android:textSize="14sp"
             android:visibility="visible"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/title_offer" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

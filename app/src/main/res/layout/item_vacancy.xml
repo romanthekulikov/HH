@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginStart="20dp"
@@ -14,6 +15,7 @@
         android:id="@+id/image_check_favorite"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:contentDescription="@string/description_favorite_check"
         android:src="@drawable/selector_ic_favorite_vacancy"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -40,17 +42,17 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
-            android:text="UI/UX Designer"
+            android:text="@string/stub_title_vacancy_name"
             android:textColor="@color/white"
             android:textSize="18sp"
             tools:layout_editor_absoluteX="12dp" />
 
         <TextView
-            android:id="@+id/text_salary"
+            android:id="@+id/title_salary"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
-            android:text="20 000 до 50 000 ₽"
+            android:text="@string/stub_title_salary"
             android:textColor="@color/white"
             android:textSize="20sp" />
 
@@ -58,27 +60,29 @@
             android:id="@+id/title_town"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Минск"
+            android:text="@string/stub_title_town"
             android:textColor="@color/white" />
 
         <LinearLayout
             android:id="@+id/layout_company"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            tools:ignore="UseCompoundDrawables">
 
             <TextView
                 android:id="@+id/title_company"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="6dp"
-                android:text="Мобирикс"
+                android:text="@string/stub_title_company_name"
                 android:textColor="@color/white" />
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:contentDescription="@string/description_company_check_icon"
                 android:src="@drawable/ic_company_check" />
         </LinearLayout>
 
@@ -87,20 +91,22 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            tools:ignore="UseCompoundDrawables">
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginEnd="6dp"
+                android:contentDescription="@string/description_experience_icon"
                 android:src="@drawable/ic_experience" />
 
             <TextView
                 android:id="@+id/title_layout_experience"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Опыт от 1 до 3 лет"
+                android:text="@string/stub_title_experience"
                 android:textColor="@color/white" />
 
         </LinearLayout>
@@ -110,18 +116,18 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingTop="10dp"
-            android:text="Опубликовано 16 февраля"
+            android:text="@string/stub_title_publish_date"
             android:textColor="@color/dark_gray" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button_response"
             android:layout_width="match_parent"
-            android:layout_height="30dp"
+            android:layout_height="48dp"
             android:layout_marginStart="6dp"
             android:layout_marginTop="6dp"
             android:layout_marginEnd="6dp"
             android:background="@drawable/shape_response_button"
-            android:text="Откликнуться"
+            android:text="@string/title_button_response"
             android:textColor="@color/white"
             android:textSize="12sp" />
     </LinearLayout>

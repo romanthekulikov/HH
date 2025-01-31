@@ -10,7 +10,7 @@
         android:id="@+id/title_messages"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Сообщения"
+        android:text="@string/title_messages"
         android:textColor="@color/white"
         android:textSize="26sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -19,7 +19,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Уупс, здесь пока ничего нет"
+        android:text="@string/stub_empty_page"
         android:textColor="@color/gray"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"

@@ -1,9 +1,10 @@
 package com.roman_kulikov.domain.entities
 
 import com.roman_kulikov.domain.DisplayableItem
+import java.io.Serializable
 import java.time.LocalDate
 
-interface Vacancy : DisplayableItem {
+interface Vacancy : DisplayableItem, Serializable {
     val id: String
     val lookingNumber: Int?
     val title: String

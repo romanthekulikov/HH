@@ -10,11 +10,11 @@ import com.roman_kulikov.hh.databinding.ActivityMainBinding
 import com.roman_kulikov.hh.ui.base.BaseActivity
 import com.roman_kulikov.hh.ui.main.custom_view.BottomNavigationItem
 import com.roman_kulikov.hh.ui.main.custom_view.HHBottomNavigationView
-import com.roman_kulikov.hh.ui.main.fragments.FavoriteFragment
 import com.roman_kulikov.hh.ui.main.fragments.MessagesFragment
 import com.roman_kulikov.hh.ui.main.fragments.ProfileFragment
 import com.roman_kulikov.hh.ui.main.fragments.ResponseFragment
-import com.roman_kulikov.hh.ui.main.fragments.SearchFragment
+import com.roman_kulikov.hh.ui.main.fragments.favorites.FavoriteFragment
+import com.roman_kulikov.hh.ui.main.fragments.search.SearchFragment
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 
@@ -36,10 +36,7 @@ class MainActivity : BaseActivity<MainState>(), HHBottomNavigationView.OnItemCli
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        if (viewModel.state.value.vacancyList == null) {
-            requestData()
-        }
-
+        viewModel.getData()
         installBottomNavigation()
         observeState()
     }
@@ -54,19 +51,13 @@ class MainActivity : BaseActivity<MainState>(), HHBottomNavigationView.OnItemCli
             viewModel.state.collectLatest { state ->
                 binding.progressBar.isActivated = state.loadInProgress
                 binding.progressBar.visibility = if (state.loadInProgress) View.VISIBLE else View.GONE
-
+                binding.HHBottomNavigationView.setFavoriteVacancyNumber(state.favoriteCount)
                 if (state.errorMessage != null) {
                     showToast(state.errorMessage)
+                    viewModel.deleteErrorMessage()
                 }
-
             }
         }
-    }
-
-    private fun requestData() {
-        binding.progressBar.isActivated = true
-        binding.progressBar.visibility = View.VISIBLE
-        viewModel.getData()
     }
 
     private fun replaceFragmentTo(fragment: Fragment) {

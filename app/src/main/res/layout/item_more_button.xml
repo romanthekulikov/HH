@@ -8,11 +8,11 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button_more"
-        android:background="@drawable/shape_button"
         android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:background="@drawable/shape_button"
         android:text="@string/stub_title_more_button"
-        android:textSize="16sp"
         android:textColor="@color/white"
-        android:layout_height="58dp"/>
+        android:textSize="16sp" />
 
 </LinearLayout>

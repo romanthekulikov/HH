@@ -22,7 +22,8 @@ abstract class BaseViewModel<S: BaseState> : ViewModel, CoroutineScope, Progress
     override val coroutineContext: CoroutineContext = Dispatchers.IO + SupervisorJob()
 
     protected abstract val _state: MutableStateFlow<S>
-    val state: StateFlow<S> by lazy { _state.asStateFlow() }
+    val state: StateFlow<S>
+        get() = _state.asStateFlow()
 
     fun CoroutineScope.launchWithProgress(
         context: CoroutineContext = EmptyCoroutineContext,

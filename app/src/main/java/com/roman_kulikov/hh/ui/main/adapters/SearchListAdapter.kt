@@ -1,5 +1,6 @@
 package com.roman_kulikov.hh.ui.main.adapters
 
+import android.annotation.SuppressLint
 import com.hannesdorfmann.adapterdelegates4.ListDelegationAdapter
 import com.roman_kulikov.domain.DisplayableItem
 import com.roman_kulikov.hh.ui.main.adapters.delegators.MoreButtonAdapterDelegate
@@ -10,11 +11,11 @@ import com.roman_kulikov.hh.ui.main.adapters.delegators.VacancyTitleAdapterDeleg
 import javax.inject.Inject
 
 class SearchListAdapter @Inject constructor(
-    searchFieldAdapterDelegate: SearchFieldAdapterDelegate,
+    private val searchFieldAdapterDelegate: SearchFieldAdapterDelegate,
     offersListAdapterDelegate: OffersListAdapterDelegate,
     vacancyTitleAdapterDelegate: VacancyTitleAdapterDelegate,
-    vacancyAdapterDelegate: VacancyAdapterDelegate,
-    moreButtonAdapterDelegate: MoreButtonAdapterDelegate
+    private val vacancyAdapterDelegate: VacancyAdapterDelegate,
+    private val moreButtonAdapterDelegate: MoreButtonAdapterDelegate
 ) : ListDelegationAdapter<List<DisplayableItem>>(
     searchFieldAdapterDelegate,
     offersListAdapterDelegate,
@@ -22,8 +23,21 @@ class SearchListAdapter @Inject constructor(
     vacancyAdapterDelegate,
     moreButtonAdapterDelegate
 ) {
+    @SuppressLint("NotifyDataSetChanged")
     fun changeSearchState(newDataList: List<DisplayableItem>) {
         setItems(newDataList)
         notifyDataSetChanged()
+    }
+
+    fun setOnVacancyClickListener(onVacancyClickListener: VacancyAdapterDelegate.OnVacancyClickListener) {
+        vacancyAdapterDelegate.onVacancyClickListener = onVacancyClickListener
+    }
+
+    fun setSearchOnClickListener(onClickListener: SearchFieldAdapterDelegate.OnClickListener) {
+        searchFieldAdapterDelegate.onClickListener = onClickListener
+    }
+
+    fun setMoreButtonClickListener(onMoreButtonClickListener: MoreButtonAdapterDelegate.OnMoreButtonClickListener) {
+        moreButtonAdapterDelegate.onMoreButtonClickListener = onMoreButtonClickListener
     }
 }

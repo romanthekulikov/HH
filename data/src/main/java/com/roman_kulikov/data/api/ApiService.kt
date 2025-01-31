@@ -1,6 +1,6 @@
 package com.roman_kulikov.data.api
 
-import com.roman_kulikov.data.models.ApiResponse
+import com.roman_kulikov.data.api.models.ApiResponse
 import retrofit2.http.GET
 
 interface ApiService {

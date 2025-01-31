@@ -3,21 +3,21 @@
     <item
         android:id="@+id/search"
         android:icon="@drawable/ic_search_unselected"
-        android:title="Поиск" />
+        android:title="@string/title_item_search" />
     <item
         android:id="@+id/favorite"
         android:icon="@drawable/ic_favorite_unselected"
-        android:title="Избранное" />
+        android:title="@string/title_favorite" />
     <item
         android:id="@+id/responses"
         android:icon="@drawable/ic_response_unselected"
-        android:title="Отклики" />
+        android:title="@string/title_responses" />
     <item
         android:id="@+id/messages"
         android:icon="@drawable/ic_message_unselected"
-        android:title="Сообщения" />
+        android:title="@string/title_messages" />
     <item
         android:id="@+id/profile"
         android:icon="@drawable/ic_profile_unselected"
-        android:title="Профиль" />
+        android:title="@string/title_profile" />
 </menu>

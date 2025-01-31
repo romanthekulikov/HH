@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.hannesdorfmann.adapterdelegates4.AdapterDelegate
 import com.roman_kulikov.domain.DisplayableItem
 import com.roman_kulikov.hh.databinding.ItemVacancyTitleBinding
-import com.roman_kulikov.hh.ui.main.adapters.models.VacancyTitle
+import com.roman_kulikov.hh.ui.main.adapters.items.VacancyTitle
 import javax.inject.Inject
 
 class VacancyTitleAdapterDelegate @Inject constructor() : AdapterDelegate<List<DisplayableItem>>() {
@@ -15,7 +15,8 @@ class VacancyTitleAdapterDelegate @Inject constructor() : AdapterDelegate<List<D
     }
 
     override fun onCreateViewHolder(parent: ViewGroup): RecyclerView.ViewHolder {
-        return VacancyTitleViewHolder(ItemVacancyTitleBinding.inflate(LayoutInflater.from(parent.context), parent, false))
+        val binding = ItemVacancyTitleBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return VacancyTitleViewHolder(binding)
     }
 
     override fun onBindViewHolder(
@@ -23,16 +24,7 @@ class VacancyTitleAdapterDelegate @Inject constructor() : AdapterDelegate<List<D
         position: Int,
         holder: RecyclerView.ViewHolder,
         payloads: MutableList<Any>
-    ) {
-        val viewHolder = holder as VacancyTitleViewHolder
-        val title = (items[position] as VacancyTitle).title
+    ) { /* nothing */ }
 
-        viewHolder.bind(title)
-    }
-
-    inner class VacancyTitleViewHolder(private val binding: ItemVacancyTitleBinding) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(item: String) {
-            binding.titleVacancy.text = item
-        }
-    }
+    inner class VacancyTitleViewHolder(binding: ItemVacancyTitleBinding) : RecyclerView.ViewHolder(binding.root)
 }

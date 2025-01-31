@@ -35,7 +35,7 @@ class OfferAdapter @Inject constructor() : RecyclerView.Adapter<OfferAdapter.Off
                     offerIconIdToResMap[item.offerId]?.let { imageIcOffer.setImageResource(it) }
                 }
 
-                titleOffer.text = item.title
+                titleOffer.text = item.title.trim()
 
                 if (item.button == null) {
                     titleUp.visibility = View.GONE

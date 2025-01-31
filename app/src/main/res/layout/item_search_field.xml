@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginStart="20dp"
-    android:layout_marginEnd="20dp"
-    android:layout_marginBottom="20dp"
     android:layout_marginTop="10dp"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_marginEnd="20dp"
+    android:layout_marginBottom="20dp">
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -14,17 +15,18 @@
         android:layout_height="50dp"
         android:layout_marginEnd="10dp"
         android:background="@drawable/shape_search_view"
-        android:paddingStart="20dp"
-        android:paddingEnd="20dp"
+        android:paddingStart="14dp"
+        android:paddingEnd="14dp"
         app:layout_constraintEnd_toStartOf="@+id/filter_view"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
             android:id="@+id/image_search"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             android:layout_gravity="center_vertical"
+            android:contentDescription="@string/description_search_field_icon"
             android:src="@drawable/ic_search_unselected" />
 
         <EditText
@@ -32,20 +34,24 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginStart="10dp"
-            android:textColor="@color/white"
+            android:autofillHints="name"
             android:background="@android:color/transparent"
-            android:hint="Должность, ключевые слова"
+            android:hint="@string/hint_input_query_limit_mode"
+            android:inputType="text"
+            android:singleLine="true"
+            android:textColor="@color/white"
             android:textColorHint="@color/gray"
-            android:textSize="12sp" />
+            android:textSize="16sp" />
     </LinearLayout>
 
     <ImageView
         android:id="@+id/filter_view"
         android:layout_width="50dp"
         android:layout_height="50dp"
+        android:background="@drawable/shape_search_view"
+        android:contentDescription="@string/description_filter_icon"
         android:padding="14dp"
         android:src="@drawable/ic_filter"
-        android:background="@drawable/shape_search_view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -62,20 +68,21 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:text="@string/stub_vacancy_number"
             android:textColor="@color/white"
-            android:text="145 вакансий"
             android:textSize="16sp" />
 
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            tools:ignore="UseCompoundDrawables">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginEnd="4dp"
-                android:text="По соответствию"
+                android:text="@string/stub_title_match"
                 android:textColor="@color/blue"
                 android:textSize="16sp" />
 
@@ -83,6 +90,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
+                android:contentDescription="@string/description_match_image"
                 android:src="@drawable/ic_match" />
         </LinearLayout>
 
